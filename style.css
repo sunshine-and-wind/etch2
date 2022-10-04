@@ -15,15 +15,20 @@ body {
     border: 1px solid black;
 }
 
-#square {
+.square {
     background-color: white;
 }
 
-.changed {
+.menu {
+    max-width: 512px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#changed {
     background-color: black;
 }
 
-#square:hover {
-    background-color: black;
-    
-}
+
+
+
