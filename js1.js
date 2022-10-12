@@ -1,5 +1,7 @@
 const container = document.querySelector('.container');
-const divSquare = document.getElementsByClassName('square');
+let divSquare = document.getElementsByClassName('square');
+let newNum = 0;
+
 
 function createDivs(n) {
     container.innerHTML="";
@@ -10,35 +12,53 @@ function createDivs(n) {
         divs.classList.add('square');
         divs.style.height = `${(512/hw)}px`;
         divs.style.width = `${(512/hw)}px`;
-        container.appendChild(divs);        
+        container.appendChild(divs);           
     }
+    initBoard();
 };
 
 createDivs(16);
-initBoard();
+
+// create initial board state: etch-a-sketch mode with black pen
 
 function initBoard() {
 for (const divs of divSquare) {
-    divs.addEventListener('mouseenter', () => {
+    divs.addEventListener('mouseenter', function black() {
         divs.id = 'black'
         })
 }
 }
 
+
+// eraser state: mouseenter = white
+
 function eraser() {
     for (const divs of divSquare) {
     divs.addEventListener('mouseenter', () => {
+        if (divs.id = 'black') {
         divs.id = 'white'
+        };
     })
     }
 }
 
-function newNumber() {
-    const newNum = document.querySelector('input').value;
-    createDivs(newNum);
+function pen() {
+    for (const divs of divSquare) {
+    divs.addEventListener('mouseenter', () => { {
+        divs.id = 'black'
+        };
+    })
+    }
 }
 
 function resetBox() {
-    createDivs(16)
-    initBoard()
+    createDivs(16);    
+    }
+
+function newNumber(newNum) {
+    newNum = document.querySelector('input').value;
+    createDivs(newNum);
 }
+
+
+
