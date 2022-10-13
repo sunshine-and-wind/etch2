@@ -1,7 +1,8 @@
 const container = document.querySelector('.container');
 let divSquare = document.getElementsByClassName('square');
-let newNum = 0;
 
+
+//create grid and make default pen black
 
 function createDivs(n) {
     container.innerHTML="";
